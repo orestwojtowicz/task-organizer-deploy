@@ -25,7 +25,8 @@ Application has unit test for backend part and also frontend.
 
 Sample test for NoteService. This test is checking that data are converter correctly from Entity to ViewModel
 
-``
+```
+
     @Test
     void convertEntityToViewModel() {
         // given
@@ -44,11 +45,13 @@ Sample test for NoteService. This test is checking that data are converter corre
         verify(noteRepository).findById(1L);
         verify(noteRepository).findById(anyLong());
     }
-``
+    
+```
 
 Sample test for Angular service, for creating new note
 
-``
+```
+
  it ('should create new note ', () => {
     noteService.saveNote(
       {id: '3', text: 'new text', title: 'new title', notebookId: '2', lastModif: new Date()}
@@ -60,8 +63,8 @@ Sample test for Angular service, for creating new note
     expect(req.request.method).toBe("POST");
     httpMock.verify();
   });
-
-``
+  
+```
 
 
 
@@ -74,8 +77,12 @@ It will start whole application on http://www.localhost:8080<br>
 
 ## Database
 
-Application is using h2 in memory database, you can check it under localhost:8080/h2-console
+Application is using h2 in memory database, you can check it under 
+<br>
+localhost:8080/h2-console
+<br>
 JDBC URL - jdbc:h2:mem:damian
+<br>
 User Name: damian
 
 
