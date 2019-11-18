@@ -30,10 +30,10 @@ public class SwaggerConfig {
 
 
     ApiInfo apiInfo = new ApiInfo(
-            "Space Tourist System",
+            "Task Organizer",
             "Documentation for REST endpoints",
-            "0.98",
-            "https://github.com/orestwojtowicz/space-tourist",
+            "1.0",
+            "https://github.com/orestwojtowicz/task-organizer-deploy",
             contact,
             "licence - MIT",
             "",

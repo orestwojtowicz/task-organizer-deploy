@@ -26,22 +26,6 @@ input {
 
 }
 
-@media screen and (max-width: 780px) {
-
-  .grid-wrapper {
-   grid-template-columns: repeat(auto-fill, 300px);
-
-  }
-}
-
-
-@media screen and (max-width: 400px) {
-
-  .grid-wrapper > div{
-    width: 50%;
-  }
-}
-
 
 .note-wrapper {
 
@@ -50,16 +34,31 @@ input {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 
+}
 
+@media screen and (max-width: 780px) {
+
+  .grid-wrapper {
+   grid-template-columns: repeat(auto-fill, 300px);
+  }
+ .wrapper {
+   grid-template-columns: repeat(auto-fill, 300px);
+ }
 }
 
 
-.note {
+@media screen and (max-width: 600px) {
 
+  .grid-wrapper > div{
+    width: 50%;
+
+  }
+
+}
+
+.note {
   background: rgb(221,221,221);
   background: linear-gradient(0deg, rgba(221,221,221,1) 0%, rgba(255,247,231,1) 18%);
-
-
 }
 
 textarea {

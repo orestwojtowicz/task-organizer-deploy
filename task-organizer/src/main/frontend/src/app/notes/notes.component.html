@@ -51,7 +51,7 @@
 
 <!-- NOTE CARDS-->
 
-<div class="note-wrapper">
+<div class="note-wrapper wrapper">
   <app-note *ngFor="let note of notes | noteTextFilter: searchText" [note]="note"
             (noteDeleted)="deleteNote($event)"
             (noteUpdated)="updateNote(note)">
