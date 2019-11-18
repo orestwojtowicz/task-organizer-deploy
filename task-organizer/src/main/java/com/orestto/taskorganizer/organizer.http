@@ -1,0 +1,95 @@
+
+
+### Notebook
+
+GET {{host-url}}/notebooks/all
+
+###
+
+DELETE {{host-url}}/notebooks/1
+
+
+###
+POST {{host-url}}/notebooks
+Content-Type: application/json
+
+{
+"name": "new notebook"
+
+}
+
+
+### single note
+
+POST {{host-url}}/notes
+Content-Type: application/json
+
+{
+  "title": "Another Note",
+  "text": "Another Note Description",
+  "notebookId": "2"
+}
+
+###
+
+GET {{host-url}}/notes/all
+
+###
+
+DELETE {{host-url}}/notes/9
+
+###
+
+GET {{host-url}}/notes/notebook/2
+
+###
+
+GET {{host-url}}/notes/byid/4
+
+###
+
+
+DELETE {{host-url}}/notes/7
+
+
+###
+
+POST {{host-url}}/feedback
+Content-Type: application/json
+
+{
+  "name": "Pawel",
+  "email": "dan@gmail.com",
+  "content": "All is broken :("
+}
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

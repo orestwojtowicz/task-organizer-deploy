@@ -1,0 +1,92 @@
+<!-- NOTE CONTENT  -->
+
+<div class="grid-wrapper">
+
+  <div class="text-search">
+    <input type="text"
+           placeholder="Search notes..."
+           [(ngModel)]="searchText"
+          />
+  </div>
+
+  <div class="button-container">
+    <button type="button"
+            id="notebook-button"
+            (click)="createNotebook()">
+      <i class="fa fa-plus">Notebook</i>
+
+    </button>
+    <button type="button "
+            class="btn btn-dangerous"
+            id="note-button"
+            (click)="createNote(selectedNotebook.id)"
+            [disabled]="selectedNotebook == null"
+    >
+      <i class="fa fa-plus">Note</i>
+    </button>
+  </div>
+
+ <div class="notebooks-list">
+    <h2>Notebooks</h2>
+    <button class="btn" (click)="getAllNotes()">Get All</button>
+    <ul *ngFor="let notebook of notebooks" (click)="selectNotebook(notebook)">
+      <i class="fa fa-book" style="color: #fca22b;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <i class="fa fa-trash-o" style="cursor: pointer; margin-right: 10px;" (click)="deleteNotebook(notebook)"></i>
+      <input [(ngModel)]="notebook.name" (change)="updateNotebook(notebook)">
+    </ul>
+  </div>
+  <div>
+  </div>
+</div>
+
+
+<!-- VALIDATION FOR NOTES-->
+<div>
+  <h3 *ngIf="selectedNotebook != null">{{'selected notebook ' + selectedNotebook.name}}</h3>
+  <h3 *ngIf="selectedNotebook == null">All notes</h3>
+  <p *ngIf="this.notes.length === 0">There are no notes to display in this notebook :(</p>
+</div>
+<!-- VALIDATION FOR NOTES-->
+
+
+<!-- NOTE CARDS-->
+
+<div class="note-wrapper">
+  <app-note *ngFor="let note of notes | noteTextFilter: searchText" [note]="note"
+            (noteDeleted)="deleteNote($event)"
+            (noteUpdated)="updateNote(note)">
+  </app-note>
+</div>
+
+
+
+<!--
+w child komponencie robimy Event emitera i tutaj tej metodzie z child komponentu przypisuje
+metode z obecnego komponentu i jako $event przesylam note
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
